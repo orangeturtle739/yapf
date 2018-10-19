@@ -337,7 +337,7 @@ def _SpaceRequiredBetween(left, right):
   if (lval in pytree_utils.CLOSING_BRACKETS and
       rval in pytree_utils.CLOSING_BRACKETS):
     # Nested objects' closing brackets shouldn't be separated.
-    return False
+    return style.Get('SPACE_BEFORE_OPENING_BRACKETS') and style.Get('SPACE_BEFORE_CLOSING_BRACKETS')
   if lval in pytree_utils.CLOSING_BRACKETS and rval in '([':
     # A call, set, dictionary, or subscript that has a call or subscript after
     # it shouldn't have a space between them.
