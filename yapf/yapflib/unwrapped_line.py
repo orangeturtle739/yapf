@@ -344,14 +344,14 @@ def _SpaceRequiredBetween(left, right):
     return False
   if lval in pytree_utils.OPENING_BRACKETS and _IsIdNumberStringToken(right):
     # Don't separate the opening bracket from the first item.
-    return False
+    return style.Get('SPACE_BEFORE_OPENING_BRACKETS')
   if left.is_name and rval in '([':
     # Don't separate a call or array access from the name.
     return False
   if rval in pytree_utils.CLOSING_BRACKETS:
     # Don't separate the closing bracket from the last item.
     # FIXME(morbo): This might be too permissive.
-    return False
+    return style.Get('SPACE_BEFORE_CLOSING_BRACKETS')
   if lval == 'print' and rval == '(':
     # Special support for the 'print' function.
     return False
