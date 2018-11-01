@@ -41,9 +41,9 @@ class RunTests(Command):
 
 with codecs.open('README.rst', 'r', 'utf-8') as fd:
   setup(
-      name='yapf',
+      name='yapf-brg',
       version=yapf.__version__,
-      description='A formatter for Python code.',
+      description='A formatter for BRG Python code.',
       long_description=fd.read(),
       license='Apache License, Version 2.0',
       author='Google Inc.',
@@ -65,7 +65,7 @@ with codecs.open('README.rst', 'r', 'utf-8') as fd:
           'Topic :: Software Development :: Quality Assurance',
       ],
       entry_points={
-          'console_scripts': ['yapf = yapf:run_main'],
+          'console_scripts': ['yapf-brg = yapf:run_main'],
       },
       cmdclass={
           'test': RunTests,
